@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADOW RP - Loading</title>
+    
+    <!-- Main Stylesheet (includes @font-face) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background Video with Blur -->
+    <div class="video-background">
+        <video id="bg-video" autoplay muted loop playsinline>
+            <source id="video-source-mp4" src="" type="video/mp4">
+            <source id="video-source-webm" src="" type="video/webm">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="logo-container">
+                <img id="server-logo" src="" alt="SHADOW RP Logo">
+            </div>
+            <h1 class="server-name">SHADOW RP</h1>
+            <p class="server-tagline">عالم الرول بلاي العربي الاحترافي</p>
+        </div>
+
+        <!-- Rules Glass Box -->
+        <div class="rules-container">
+            <div class="rules-header">
+                <i class="icon-rules">📜</i>
+                <h2>قوانين السيرفر</h2>
+            </div>
+            <div id="rules-content" class="rules-content">
+                <!-- Rules will be injected here -->
+            </div>
+        </div>
+
+        <!-- Loading Section -->
+        <div class="loading-section">
+            <div class="loading-indicator">
+                <div class="loading-spinner"></div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p class="loading-text">جاري تحميل الموارد...</p>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <div class="tips-container">
+                <span class="tips-icon">💡</span>
+                <p id="current-tip" class="tip-text"></p>
+            </div>
+        </div>
+
+        <!-- Discord Link -->
+        <div class="discord-section">
+            <a id="discord-link" href="#" target="_blank" class="discord-button">
+                <span class="discord-icon">🎮</span>
+                <span>انضم إلى الديسكورد</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="bg-audio" loop preload="auto">
+        <source id="audio-source-ogg" src="" type="audio/ogg">
+        <source id="audio-source-mp3" src="" type="audio/mpeg">
+    </audio>
+
+    <!-- Configuration (will be populated by main.js) -->
+    <script src="js/config.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
