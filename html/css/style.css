@@ -1,0 +1,432 @@
+/* ==========================================
+   FONT FACE - Arabic Custom Font
+   ========================================== */
+@font-face {
+    font-family: 'Cairo';
+    src: url('../fonts/Cairo-Regular.woff2') format('woff2'),
+         url('../fonts/Cairo-Regular.woff') format('woff'),
+         url('../fonts/Cairo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../fonts/Cairo-Bold.woff2') format('woff2'),
+         url('../fonts/Cairo-Bold.woff') format('woff'),
+         url('../fonts/Cairo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+    direction: rtl;
+    color: #ffffff;
+}
+
+/* ==========================================
+   VIDEO BACKGROUND WITH BLUR
+   ========================================== */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px) brightness(0.7);
+    transform: scale(1.05);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(20, 0, 0, 0.6) 0%, rgba(40, 0, 0, 0.5) 100%);
+}
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+.main-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 60px;
+    z-index: 1;
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeInDown 1s ease-out;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 20px rgba(255, 23, 68, 0.5));
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.server-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 20px rgba(255, 23, 68, 0.8);
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #ff8a80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.server-tagline {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   RULES GLASS BOX (FLOATING - RED THEME)
+   ========================================== */
+.rules-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 23, 68, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 23, 68, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(255, 23, 68, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.rules-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 23, 68, 0.2);
+}
+
+.icon-rules {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 8px rgba(255, 23, 68, 0.5));
+}
+
+.rules-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(255, 23, 68, 0.5);
+}
+
+.rules-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar - Red Theme */
+.rules-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rules-content::-webkit-scrollbar-track {
+    background: rgba(255, 23, 68, 0.05);
+    border-radius: 10px;
+}
+
+.rules-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 23, 68, 0.3);
+    border-radius: 10px;
+}
+
+.rules-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 23, 68, 0.5);
+}
+
+.rule-category {
+    background: rgba(255, 23, 68, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 23, 68, 0.15);
+}
+
+.rule-category h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ff1744;
+    text-shadow: 0 2px 8px rgba(255, 23, 68, 0.4);
+}
+
+.rule-category ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rule-category li {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-right: 20px;
+    position: relative;
+    opacity: 0.95;
+}
+
+.rule-category li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: #ff1744;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* ==========================================
+   LOADING SECTION - RED THEME
+   ========================================== */
+.loading-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 23, 68, 0.1);
+    border-top: 4px solid #ff1744;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.4);
+}
+
+.loading-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 23, 68, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff1744 0%, #ff5252 100%);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.6);
+}
+
+.loading-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   TIPS SECTION - RED THEME
+   ========================================== */
+.tips-section {
+    margin-bottom: 20px;
+}
+
+.tips-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 23, 68, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 23, 68, 0.15);
+    padding: 20px 30px;
+    box-shadow: 0 4px 16px rgba(255, 23, 68, 0.2);
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.tips-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 8px rgba(255, 23, 68, 0.4));
+}
+
+.tip-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    transition: opacity 0.5s ease;
+}
+
+/* ==========================================
+   DISCORD SECTION - RED THEME
+   ========================================== */
+.discord-section {
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.discord-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 23, 68, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 23, 68, 0.3);
+    border-radius: 12px;
+    padding: 15px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(255, 23, 68, 0.25);
+}
+
+.discord-button:hover {
+    background: rgba(255, 23, 68, 0.25);
+    border-color: rgba(255, 23, 68, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.4);
+}
+
+.discord-icon {
+    font-size: 1.5rem;
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+    .main-container {
+        padding: 30px 40px;
+    }
+    
+    .server-name {
+        font-size: 2.8rem;
+    }
+    
+    .rules-container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px 30px;
+    }
+    
+    .server-name {
+        font-size: 2.2rem;
+    }
+    
+    .rules-container {
+        padding: 20px;
+    }
+    
+    .rules-header h2 {
+        font-size: 1.5rem;
+    }
+}
